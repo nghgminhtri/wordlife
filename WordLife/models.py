@@ -12,13 +12,13 @@ class Word(Model):
         return self.word
 
 
-class WLUser(User):
-    def __init__(self):
-        super(User, self).__init__()
+# class WLUser(User):
+#     def __init__(self):
+#         super(User, self).__init__()
 
 
 class WordList(Model):
-    user = ForeignKey(WLUser)
+    user = ForeignKey(User)
     words = ManyToManyField(Word, through='WordListWord', blank=True)
     listName = CharField(max_length=200, blank=False)
 

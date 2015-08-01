@@ -1,0 +1,69 @@
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="nameription" content="">
+	<meta name="author" content="">
+	<title>Word Life</title>
+	<link href="static/css/Home.css" rel="stylesheet">
+	<script type="text/javascript" src="http://st-vcdn.anthill.vn/js/library/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="http://cherne.net/brian/resources/jquery.hoverIntent.js"></script>	
+</head>
+<body>
+	<div class="wrapper">
+		<div class="header">
+			<div class="webname">
+				WORDLIFE
+			</div>
+			<ul>
+				<li>Trang chủ</li>
+				<li>Danh sách từ</li>
+				<li>Học từ</li>	
+				<li>Về WordLife</li>				
+			</ul>
+		</div>
+		<div class="content">	
+			<div class="hinh">
+				<img src="static/image/background.jpg">
+			</div>
+			<div class="textlist">
+				{% if wordlists %}
+				<ul>
+					{% for wordlist in wordlists %}
+						<li><a href="/list/{{ wordlist.id }}">{{ wordlist.listName }}</a></li>
+					{% endfor %}
+				</ul>
+				{% endif %}
+			</div>
+		</div>
+
+		<div class="footer">
+			<div class="about">				
+				<ul>
+					<li>
+						Về WORDLIFE
+					</li>
+					<li>
+						Company 
+					</li>	
+					<li>
+						Jobs
+					</li>
+					<li>
+						Privacy
+					</li>
+					<li>
+						Terms
+					</li> 
+					<li>
+						Contact
+					</li>
+				</ul>
+			</div>
+			<div class="quote">
+				Study Everywhere! © 2015 WordLife Inc. Follow @WordLife on Facebook.
+			</div>
+		</div>
+	</div>
+</body>
