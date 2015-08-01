@@ -8,9 +8,72 @@
 	<title>Danh sách từ</title>
 	<link href="css/DST.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+	<link href="css/css/bootstrap.min.css" rel="stylesheet">
 	<script type="text/javascript" src="http://st-vcdn.anthill.vn/js/library/jquery-1.10.2.min.js"></script>
 	<script type="text/javascript" src="http://cherne.net/brian/resources/jquery.hoverIntent.js"></script>	
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+	 	jQuery(document).ready(function($){
+	 		//Select all editable text
+	 		jQuery.fn.selectText = function(){
+			    var doc = document;
+			    var element = this[0];
+			    console.log(this, element);
+			    if (doc.body.createTextRange) {
+			        var range = document.body.createTextRange();
+			        range.moveToElementText(element);
+			        range.select();
+			    } else if (window.getSelection) {
+			        var selection = window.getSelection();        
+			        var range = document.createRange();
+			        range.selectNodeContents(element);
+			        selection.removeAllRanges();
+			        selection.addRange(range);
+			    }
+			};
+			//--------------------------------
+			//When click a card or an image
+	 		$('.words ul').on('click','li',function(event){	 
+	 			console.log('a');			 			
+	 			$('.card').parent().children().css('border','5px black solid')
+	 			$(this).children().css('border','15px orange solid')
+	 			wordli=$(this);	 			
+	 			//When click minus icon
+	 			$('.glyphicon.glyphicon-minus').click(function(){ //Remove selected card + image
+  				console.log($(wordli));
+	 				wordli.remove();
+	 			})
+	 			//When click edit icon
+	 			$('.glyphicon.glyphicon-edit').click(function(){	 				
+	 				console.log('a');
+ 					wordli.find('.card p').attr('contenteditable','true');
+ 					wordli.find('.card p').selectText(); 		
+ 					wordli.find('.card p').blur(function(){
+ 						wordli.find('.card p').attr('contenteditable','false');
+ 					})
+  				});
 
+	 		});
+	 		//When click plus icon
+	 		$('.glyphicon.glyphicon-plus').click(function(){
+ 				console.log($(this));	
+ 				var newli=document.createElement("li");	 
+ 				var newcard=document.createElement("div");	 			
+ 				var newimage=document.createElement("div");	 		 			
+ 				var txt=$("<p></p>").text("Word "+ (parseInt($('.words ul li').length)+1));
+ 				$('.words ul').prepend(newli);     // 
+ 				$('.words ul li:first-child').prepend(newcard);	 			 			 						
+ 				$('.words ul li:first-child').append(newimage);	
+ 				$('.words ul li:first-child div:first-child').addClass("card");	 	
+ 				$('.words ul li:first-child .card').prepend(txt);
+ 				$('.words ul li:first-child div:last-child').addClass("image");	
+ 				$('.words ul li:first-child .image').attr('align','middle');				
+ 			})
+	 		$('.glyphicon.glyphicon-volume-up').click(function(){
+	 			alert('Làm đi Trí');
+	 		});
+	 	});
+	</script>
 </head>
 <body>
 	<div class="wrapper">
@@ -19,20 +82,38 @@
 				WORDLIFE
 			</div>
 			<ul>
-				<li>Trang chủ</li>
-				<li>Danh sách từ</li>
-				<li>Học từ</li>	
-				<li>Về WordLife</li>				
+				<a href="Home.html"><li>Trang chủ</li></a>
+				<a href="DST.html"><li>Danh sách từ</li></a>
+				<a href="hoctu.html"><li>Học từ</li>	</a>
+				<a href=""><li>Về WordLife</li>	</a>				
 			</ul>
 		</div>
 		<div class="content">	
 			<div class="container">
-				<div class="name_desc">
-					<div class="listname">
-						Danh sách 1
+				<div class="name_bar">
+					<div class="edit_bar">
+						<ul>
+							<li align="middle">
+								<span class="glyphicon glyphicon-volume-up"></span>
+							</li>
+							<li align="middle">
+								<span class="glyphicon glyphicon-edit"></span>
+							</li>
+							<li align="middle">
+								<span class="glyphicon glyphicon-minus"></span>							
+							</li>
+							<li align="middle">
+								<span class="glyphicon glyphicon-plus"></span>
+							</li>
+						</ul>
 					</div>
-					<div class="listdesc">
-						description
+					<div class="name_desc">
+						<div class="listname">
+							Danh sách 1
+						</div>
+						<div class="listdesc">
+							description
+						</div>
 					</div>
 				</div>
 				<div class="words">

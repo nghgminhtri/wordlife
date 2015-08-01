@@ -5,14 +5,16 @@ body {
 ul {
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 .wrapper {
+  font-family: Arial;
   position: absolute;
   height: 100%;
   width: 100%;
 }
 .wrapper > .header {
-  position: absolute;
+  position: fixed;
   width: inherit;
   height: 150px;
   color: white;
@@ -37,12 +39,21 @@ ul {
   list-style: none;
   line-height: 150px;
 }
-.wrapper > .header > ul > li {
+.wrapper > .header > ul a {
+  text-decoration: none;
+  color: white;
+}
+.wrapper > .header > ul a > li {
+  background: linear-gradient(#014a7f, #021b54);
   text-align: center;
-  font-size: 30px;
+  font-size: 20px;
   width: 25%;
   float: left;
   line-height: inherit;
+}
+.wrapper > .header > ul a > li:hover {
+  background: linear-gradient(#021b54, #014a7f);
+  cursor: pointer;
 }
 .wrapper > .content {
   position: absolute;
@@ -61,22 +72,47 @@ ul {
   top: 0;
   bottom: 0;
 }
-.wrapper > .content > .container > .name_desc {
-  border-top-left-radius: 30%;
-  border-top-right-radius: 30%;
+.wrapper > .content > .container > .name_bar {
   height: 10%;
-  background: linear-gradient(#ffffff, #808080);
 }
-.wrapper > .content > .container > .name_desc > .listname {
+.wrapper > .content > .container > .name_bar > .edit_bar {
+  float: right;
+  height: 100%;
+  width: 60%;
+}
+.wrapper > .content > .container > .name_bar > .edit_bar > ul {
+  height: 100%;
+  width: 100%;
+}
+.wrapper > .content > .container > .name_bar > .edit_bar > ul > li {
+  background: linear-gradient(#ffffff, #808080);
+  border: solid 2px;
+  float: left;
+  height: inherit;
+  width: 25%;
+}
+.wrapper > .content > .container > .name_bar > .edit_bar > ul > li > span {
+  margin: auto;
+  top: 10%;
+  font-size: 100px;
+}
+.wrapper > .content > .container > .name_bar > .edit_bar > ul > li:hover {
+  background: linear-gradient(#808080, #ffffff);
+  cursor: pointer;
+}
+.wrapper > .content > .container > .name_bar > .name_desc {
+  height: 100%;
+  width: 40%;
+  background: linear-gradient(#808080, #ffffff);
+}
+.wrapper > .content > .container > .name_bar > .name_desc > .listname {
   font-size: 50px;
-  text-align: center;
   font-weight: bold;
   height: 60%;
 }
-.wrapper > .content > .container > .name_desc > .listdesc {
+.wrapper > .content > .container > .name_bar > .name_desc > .listdesc {
   font-size: 40px;
   height: 40%;
-  text-align: center;
   font-style: italic;
 }
 .wrapper > .content > .container > .words {
@@ -110,6 +146,9 @@ ul {
   font-size: 50px;
   font-weight: bold;
 }
+.wrapper > .content > .container > .words > ul > li > .card:hover {
+  cursor: pointer;
+}
 .wrapper > .content > .container > .words > ul > li > .image {
   height: 100%;
   width: 40%;
@@ -120,6 +159,9 @@ ul {
   vertical-align: middle;
   max-height: 100%;
   max-width: 100%;
+}
+.wrapper > .content > .container > .words > ul > li > .image:hover {
+  cursor: pointer;
 }
 .wrapper > .footer {
   position: absolute;

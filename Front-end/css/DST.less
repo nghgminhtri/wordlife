@@ -1,16 +1,19 @@
 body{
 	margin:0;
 	padding:0;
+
 }
 ul{
-	margin:0;padding:0;
+	margin:0;padding:0;list-style:none;
 }
+
 .wrapper{
+	font-family:Arial;
 	position:absolute;
 	height:100%;
 	width:100%;
 	>.header{
-		position:absolute;
+		position:fixed;
 		width:inherit;
 		height:150px;
 		color:white;
@@ -32,12 +35,21 @@ ul{
 			width:50%;
 			list-style:none;
 			line-height:150px;
-			>li{
-				text-align:center;
-				font-size:30px;
-				width:25%;
-				float:left;
-				line-height:inherit;
+			a{
+				text-decoration:none;
+				color:white;			
+				>li{
+					background: linear-gradient(#014A7F,#021B54);							
+					text-align:center;
+					font-size:20px;
+					width:25%;
+					float:left;
+					line-height:inherit;			
+					&:hover{
+						background:linear-gradient(#021B54,#014A7F);	
+						cursor:pointer;
+					}
+				}
 			}
 		}
 	}
@@ -52,24 +64,49 @@ ul{
 			width:80%;
 			position:absolute;
 			margin:auto;
-			left:0;right:0;top:0;bottom:0;			
-			>.name_desc{
-				border-top-left-radius: 30%;
-				border-top-right-radius: 30%;
-				height:10%;
-				background:linear-gradient(white, gray);	
-				>.listname{
-					font-size:50px;
-					text-align:center;
-					font-weight:bold;	
-					
-					height:60%;						
+			left:0;right:0;top:0;bottom:0;	
+			>.name_bar{	
+				height:10%;	
+				>.edit_bar{
+					float:right;
+					height:100%;
+					width:60%;
+					>ul{
+						height:100%;
+						width:100%;;
+						>li{
+							background:linear-gradient(white, gray);				
+							border: solid 2px;
+							float:left;						
+							height:inherit;
+							width:100%/4;	
+								>span{		
+								margin:auto;
+								top:10%;					
+								font-size:100px;
+							}
+							&:hover{
+								background:linear-gradient(gray,white);	
+								cursor:pointer;
+							}
+						}
+					}
 				}
-				>.listdesc{
-					font-size:40px;
-					height:40%;
-					text-align:center;
-					font-style:italic;
+				>.name_desc{
+					height:100%;
+					width: 40%;
+					background:linear-gradient(gray,white);	
+						
+					>.listname{
+						font-size:50px;
+						font-weight:bold;	
+						height:60%;						
+					}
+					>.listdesc{
+						font-size:40px;
+						height:40%;
+						font-style:italic;
+					}
 				}
 			}
 			>.words{
@@ -84,7 +121,7 @@ ul{
 						width:90%;
 						height:20%;
 						font-size:50px;
-						margin: 5%;
+						margin: 5%;						
 						>.card{
 							font-family: 'Architects Daughter', cursive;
 							height:100%;
@@ -100,6 +137,9 @@ ul{
 								font-size:50px;
 								font-weight:bold;
 							}
+							&:hover{
+								cursor:pointer;
+							}
 						}
 						>.image{
 							height:100%;
@@ -111,6 +151,9 @@ ul{
 								max-height:100%;
 								max-width:100%;
 								
+							}
+							&:hover{
+								cursor:pointer;
 							}
 						}
 					}
