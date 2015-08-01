@@ -1,0 +1,23 @@
+## Standard ignored patterns
+############################
+*~
+*.pyc
+.*.swp
+.*.swo
+*.bak
+.DS_Store
+
+## Project specific ignore patterns
+###################################
+settings_*.py
+db.sql
+/uploads/
+/www/
+
+## Deployment & build ignore pattern
+####################################
+# Virtual envs
+/env/
+/*_env/
+/env_*/
+
