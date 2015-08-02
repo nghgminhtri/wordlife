@@ -5,12 +5,11 @@ from django.contrib.auth.models import User
 # Create your models here.
 class Word(Model):
     word = CharField(max_length=200, blank=False)
-    definition = CharField(max_length=200, blank=False)
-    photo = ImageField(upload_to='photos', blank=False)
+    # definition = CharField(max_length=200, blank=False)
+    photo = ImageField(upload_to='photos', blank=True)
 
     def __str__(self):
         return self.word
-
 
 # class WLUser(User):
 #     def __init__(self):
@@ -21,6 +20,7 @@ class WordList(Model):
     user = ForeignKey(User)
     words = ManyToManyField(Word, through='WordListWord', blank=True)
     listName = CharField(max_length=200, blank=False)
+    listDescription = CharField(max_length=200, blank=True)
 
 
 class WordListWord(Model):

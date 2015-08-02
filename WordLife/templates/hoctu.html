@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block include_css %}
+<link href="{% static "css/hoctu.css" %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+	<div class="name_bar">
+		<div class="edit_bar">
+			<ul>
+				<li align="middle">
+					<div class="result"></div>
+				</li>
+				<li align="middle">
+					<div class="next">TIẾP THEO</div>
+				</li>							
+			</ul>
+		</div>
+		<div class="name_desc">
+			<div class="listname">
+				Danh sách 1
+			</div>
+			<div class="listdesc">
+				description
+			</div>
+		</div>
+	</div>
+	<div class="textbox">
+		<div class='textarea'>
+			<input type="text" name="word"> 
+		</div>
+	</div>
+	<div class="image" align="middle">
+		<img  src="http://www.brookfarm.com.au/media/images/content/detail/apple-text443.jpg">
+	</div>
+</div>
+{% endblock %}
