@@ -7,14 +7,14 @@
 .wrapper > .header {
   position: absolute;
   width: inherit;
-  height: 150px;
+  height: 80px;
   color: white;
   z-index: 1000;
 }
 .wrapper > .header > .webname {
   padding-left: 40px;
   position: absolute;
-  line-height: 150px;
+  line-height: 80px;
   font-size: 30px;
   font-weight: bold;
 }
@@ -26,7 +26,8 @@
   right: 0;
   width: 50%;
   list-style: none;
-  line-height: 150px;
+  line-height: 80px;
+  height: 80px;
 }
 .wrapper > .header > ul > a {
   text-decoration: none;
@@ -37,11 +38,22 @@
   font-size: 20px;
   width: 25%;
   float: left;
-  line-height: inherit;
+  line-height: 80px;
+  height: 80px;
 }
 .wrapper > .header > ul > a > li:hover {
   background: linear-gradient(#021b54, #014a7f);
   cursor: pointer;
+}
+.wrapper > .header > ul > a > li > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: none;
+  background: turquoise;
+}
+.wrapper > .header > ul > a > li > ul > li > a {
+  text-decoration: none;
 }
 .wrapper > .footer {
   position: absolute;

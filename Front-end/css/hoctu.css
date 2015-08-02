@@ -14,24 +14,20 @@ ul {
   width: 100%;
 }
 .wrapper > .header {
-  background: linear-gradient(#021b54, #014a7f);
+  background: linear-gradient(to right, #a7e1ed, #a5f1ca);
   /* Standard syntax */
-}
-.wrapper > .header > ul > a > li {
-  background: linear-gradient(#014a7f, #021b54);
 }
 .wrapper > .content {
   position: absolute;
   width: 100%;
-  height: 700px;
-  top: 150px;
+  height: 720px;
+  top: 80px;
   background-color: #F4F4F4;
 }
 .wrapper > .content > .container {
   padding: 0;
-  background-color: gray;
   height: 90%;
-  width: 80%;
+  width: 60%;
   position: absolute;
   margin: auto;
   left: 0;
@@ -40,7 +36,7 @@ ul {
   bottom: 0;
 }
 .wrapper > .content > .container > .name_bar {
-  height: 135px;
+  height: 100px;
 }
 .wrapper > .content > .container > .name_bar > .edit_bar {
   float: right;
@@ -56,8 +52,8 @@ ul {
   float: left;
   height: inherit;
   width: 50%;
-  font-size: 50px;
-  line-height: 135px;
+  font-size: 30px;
+  line-height: 100px;
 }
 .wrapper > .content > .container > .name_bar > .edit_bar > ul > li > .result {
   height: 100%;
@@ -77,12 +73,12 @@ ul {
   background: linear-gradient(#808080, #ffffff);
 }
 .wrapper > .content > .container > .name_bar > .name_desc > .listname {
-  font-size: 50px;
+  font-size: 40px;
   font-weight: bold;
   height: 60%;
 }
 .wrapper > .content > .container > .name_bar > .name_desc > .listdesc {
-  font-size: 40px;
+  font-size: 30px;
   height: 40%;
   font-style: italic;
 }
@@ -92,7 +88,7 @@ ul {
   bottom: 0;
   background-color: white;
   border: solid gray 1px;
-  height: 495px;
+  height: 548px;
   width: 50%;
   background-color: #F8F8F8;
   background: radial-gradient(#ffffff, #808080);
@@ -120,13 +116,19 @@ ul {
   background-color: white;
   right: 0;
   bottom: 0;
-  height: 495px;
+  height: 548px;
   width: 50%;
 }
 .wrapper > .content > .container > .image > img {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
   max-height: 100%;
   max-width: 100%;
 }
 .wrapper > .footer {
-  top: 850px;
+  top: 800px;
 }

@@ -15,22 +15,19 @@ ul {
 }
 .wrapper > .header {
   position: fixed;
-  background: linear-gradient(#021b54, #014a7f);
+  background: linear-gradient(to right, #a7e1ed, #a5f1ca);
   /* Standard syntax */
-}
-.wrapper > .header > ul > a > li {
-  background: linear-gradient(#014a7f, #021b54);
 }
 .wrapper > .content {
   position: absolute;
   width: 100%;
-  height: 1500px;
-  top: 150px;
+  height: 730px;
+  top: 80px;
   background-color: #F4F4F4;
 }
 .wrapper > .content > .container {
-  height: 90%;
-  width: 80%;
+  height: 80%;
+  width: 70%;
   position: absolute;
   margin: auto;
   left: 0;
@@ -39,7 +36,7 @@ ul {
   bottom: 0;
 }
 .wrapper > .content > .container > .name_bar {
-  height: 10%;
+  height: 100px;
 }
 .wrapper > .content > .container > .name_bar > .edit_bar {
   float: right;
@@ -59,11 +56,12 @@ ul {
 }
 .wrapper > .content > .container > .name_bar > .edit_bar > ul > li > span {
   margin: auto;
-  top: 10%;
-  font-size: 100px;
+  font-size: 90px;
+}
+.wrapper > .content > .container > .name_bar > .edit_bar > ul > li > span:hover {
+  color: green;
 }
 .wrapper > .content > .container > .name_bar > .edit_bar > ul > li:hover {
-  background: linear-gradient(#808080, #ffffff);
   cursor: pointer;
 }
 .wrapper > .content > .container > .name_bar > .name_desc {
@@ -72,17 +70,17 @@ ul {
   background: linear-gradient(#808080, #ffffff);
 }
 .wrapper > .content > .container > .name_bar > .name_desc > .listname {
-  font-size: 50px;
+  font-size: 40px;
   font-weight: bold;
   height: 60%;
 }
 .wrapper > .content > .container > .name_bar > .name_desc > .listdesc {
-  font-size: 40px;
+  font-size: 30px;
   height: 40%;
   font-style: italic;
 }
 .wrapper > .content > .container > .words {
-  height: 90%;
+  height: 484px;
   overflow-y: scroll;
   background-color: white;
 }
@@ -93,7 +91,7 @@ ul {
 }
 .wrapper > .content > .container > .words > ul > li {
   width: 90%;
-  height: 20%;
+  height: 40%;
   font-size: 50px;
   margin: 5%;
 }
@@ -130,44 +128,5 @@ ul {
   cursor: pointer;
 }
 .wrapper > .footer {
-  position: absolute;
-  width: 100%;
-  height: 100px;
-  top: 1650px;
-  background-color: #383B43;
-  color: white;
-}
-.wrapper > .footer > .about {
-  position: absolute;
-  text-align: center;
-  height: 50px;
-  width: 50%;
-  margin: auto;
-  padding: 0;
-  left: 0;
-  right: 0;
-  line-height: 50px;
-}
-.wrapper > .footer > .about > ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  height: inherit;
-}
-.wrapper > .footer > .about > ul > li {
-  text-decoration: underline;
-  float: left;
-  width: 16%;
-}
-.wrapper > .footer > .about > ul > li:first-child {
-  color: cyan;
-  text-decoration: none;
-}
-.wrapper > .footer > .quote {
-  position: absolute;
-  line-height: 50px;
-  height: 50px;
-  width: 100%;
-  top: 50%;
-  text-align: center;
+  bottom: 0;
 }

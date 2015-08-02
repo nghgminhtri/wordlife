@@ -1,0 +1,118 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.wrapper {
+  font-family: Arial;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.wrapper > .header {
+  position: fixed;
+  background: linear-gradient(to right, #a7e1ed, #a5f1ca);
+  /* Standard syntax */
+}
+.wrapper > .content {
+  position: absolute;
+  width: 100%;
+  height: 730px;
+  top: 80px;
+  background-color: #F4F4F4;
+}
+.wrapper > .content > .addbox {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  font-size: 100px;
+  right: 10%;
+}
+.wrapper > .content > .addbox > span {
+  line-height: 100px;
+}
+.wrapper > .content > .addbox > span:hover {
+  color: green;
+  cursor: pointer;
+}
+.wrapper > .content > .removebox {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  font-size: 100px;
+  left: 10%;
+}
+.wrapper > .content > .removebox > span {
+  line-height: 100px;
+}
+.wrapper > .content > .removebox > span:hover {
+  color: green;
+  cursor: pointer;
+}
+.wrapper > .content > .container {
+  height: 80%;
+  width: 60%;
+  position: absolute;
+  margin: auto;
+  overflow-y: scroll;
+  border: 10px solid black;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.wrapper > .content > .container > ul > li {
+  margin: 25px 0;
+}
+.wrapper > .content > .container > ul > li:hover {
+  background: linear-gradient(#808080, #ffffff);
+  cursor: pointer;
+}
+.wrapper > .content > .container > ul > li > .name_bar {
+  height: 100px;
+}
+.wrapper > .content > .container > ul > li > .name_bar > span {
+  font-size: 60px;
+  line-height: 100px;
+  float: right;
+  width: 100px;
+}
+.wrapper > .content > .container > ul > li > .name_bar > span:hover {
+  cursor: pointer;
+  color: green;
+}
+.wrapper > .content > .container > ul > li > .name_bar > .name_desc {
+  position: absolute;
+  height: 100px;
+  width: 90%;
+  background: linear-gradient(#ffffff);
+}
+.wrapper > .content > .container > ul > li > .name_bar > .name_desc > .listname {
+  position: absolute;
+  height: 50px;
+  top: 0;
+  font-size: 40px;
+  font-weight: bold;
+  height: 60%;
+}
+.wrapper > .content > .container > ul > li > .name_bar > .name_desc > .listdesc {
+  position: absolute;
+  bottom: 0;
+  height: 50px;
+  font-size: 30px;
+  height: 40%;
+  font-style: italic;
+}
+.wrapper > .footer {
+  bottom: 0;
+}

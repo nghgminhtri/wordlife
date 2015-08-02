@@ -1,0 +1,177 @@
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="nameription" content="">
+	<meta name="author" content="">
+	<title>Danh sách từ</title>
+	<link href="css/dstmain.css" rel="stylesheet">
+	<link href="css/headerfooter.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+	<link href="css/css/bootstrap.min.css" rel="stylesheet">
+	<script type="text/javascript" src="http://st-vcdn.anthill.vn/js/library/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="http://cherne.net/brian/resources/jquery.hoverIntent.js"></script>	
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+	 	jQuery(document).ready(function($){
+	 		//Dropdown	 	
+		
+	 		//Select all editable text
+	 		jQuery.fn.selectText = function(){
+			    var doc = document;
+			    var element = this[0];
+			    console.log(this, element);
+			    if (doc.body.createTextRange) {
+			        var range = document.body.createTextRange();
+			        range.moveToElementText(element);
+			        range.select();
+			    } else if (window.getSelection) {
+			        var selection = window.getSelection();        
+			        var range = document.createRange();
+			        range.selectNodeContents(element);
+			        selection.removeAllRanges();
+			        selection.addRange(range);
+			    }
+			};
+			//--------------------------------
+			//When click a card or an image	 		
+	 		$('.listname').blur(function(){
+	 				$(this).attr('contenteditable','false');
+	 			})	
+	 		$('.listdesc').on('click',function(){
+	 			$(this).parent().find('.listdesc').attr('contenteditable','true');	 			
+	 			$(this).parent().find('.listdesc').selectText();	 			
+	 		})
+	 		$('.container ul').on('click','li',function(){
+	 			$(this).parent().children().css('background','')
+	 			$(this).css('background','linear-gradient(gray,white)');
+	 			wordli=$(this);	 
+	 			$('.removebox').click(function(){	 				
+	 				wordli.remove();
+	 			})	 			
+	 			$('.glyphicon.glyphicon-pencil').on('click',function(){
+		 			$(this).parent().find('.listname').attr('contenteditable','true');
+		 			$(this).parent().find('.listname').selectText();
+		 				
+		 		})
+	 		})
+	 		$('.container ul').on('dblclick',function(){
+	 			window.location.href="dst.html"
+	 		});
+	 		$('.glyphicon-folder-open').on('click',function(){
+	 			window.location.href="hoctu.html"
+	 		})
+	 		$('.addbox').click(function(){	 	
+ 				console.log('clicked');			
+ 				var newli=document.createElement("li");	 
+ 				var newnamebar=document.createElement("div");	 			
+ 				var newnamedesc=document.createElement("div");	 		 			
+ 				var newnlistname=document.createElement("div");	 		 			
+ 				var newnlistdesc=document.createElement("div");
+ 				var newspan=document.createElement("span");
+ 				var nametxt="Danh sách "+ (parseInt($('.container ul li').length)+1);
+ 				var desctext='description';
+ 				$('.container ul').prepend(newli);     // 
+ 				$('.container ul li:first-child').prepend(newnamebar);	 			 			 						
+ 				$('.container ul li:first-child div').addClass('name_bar');	 
+ 				$('.container ul li:first-child .name_bar').append(newnamedesc);	
+ 				$('.container ul li:first-child .name_bar div').addClass('name_desc');		
+ 				$('.container ul li:first-child .name_bar').append(newspan);
+ 				$('.container ul li:first-child .name_bar span').addClass('glyphicon glyphicon-pencil');		
+ 				$('.container ul li:first-child .name_bar .name_desc').append(newnlistname);
+ 				$('.container ul li:first-child .name_bar .name_desc div').addClass('listname');
+ 				$('.container ul li:first-child .name_bar .name_desc').append(newnlistdesc);
+ 				$('.container ul li:first-child .name_bar .name_desc div:last-child').addClass("listdesc");
+ 				$('.container ul li:first-child .name_bar .name_desc .listname').prepend(nametxt);
+ 				$('.container ul li:first-child .name_bar .name_desc .listdesc').prepend(desctext);
+ 			})
+	 		
+	 		//When click plus icon
+
+	 	});
+	</script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="header">
+			<div class="webname">
+				WORDLIFE
+			</div>
+			<ul>
+				<a href="home.html"><li>Trang chủ</li></a>
+				<a class='danhsach' href="dstmain.html">
+					<li>Danh sách từ</li>
+				</a>				
+				<a href=""><li>Đăng nhập</li></a>				
+			</ul>
+		</div>
+		<div class="content">	
+			<div class='addbox'>
+				<span class="glyphicon glyphicon-plus-sign"></span>
+			</div>
+			<div class='removebox'>
+				<span class="glyphicon glyphicon-minus-sign"></span>
+			</div>
+			<div class="container">
+				<ul>
+					<li>	
+						<div class="name_bar">													
+							<div class="name_desc">
+								<div class="listname">
+									Danh sách 1
+								</div>
+								<div class="listdesc">
+									description
+								</div>
+							</div>
+							<span class="glyphicon glyphicon-folder-open"></span>
+							<span class="glyphicon glyphicon-pencil"></span>
+						</div>
+					</li>
+					<li>	
+						<div class="name_bar">													
+							<div class="name_desc">
+								<div class="listname">
+									Danh sách 2
+								</div>
+								<div class="listdesc">
+									description
+								</div>
+							</div>
+							<span class="glyphicon glyphicon-folder-open"></span>
+							<span class="glyphicon glyphicon-pencil"></span>
+						</div>
+					</li>	
+				</ul>				
+			</div>
+		</div>
+		<div class="footer">
+			<div class="about">				
+				<ul>
+					<li>
+						Về WORDLIFE
+					</li>
+					<li>
+						Company 
+					</li>	
+					<li>
+						Jobs
+					</li>
+					<li>
+						Privacy
+					</li>
+					<li>
+						Terms
+					</li> 
+					<li>
+						Contact
+					</li>
+				</ul>
+			</div>
+			<div class="quote">
+				Study Everywhere! © 2015 WordLife Inc. Follow @WordLife on Facebook.
+			</div>
+		</div>
+	</div>
+</body>
