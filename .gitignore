@@ -1,7 +1,7 @@
 ## Standard ignored patterns
 ############################
 *~
-*.pyc
+#*.pyc
 .*.swp
 .*.swo
 *.bak
@@ -10,7 +10,7 @@
 ## Project specific ignore patterns
 ###################################
 settings_*.py
-db.sql
+#db.sql
 /uploads/
 /www/
 
