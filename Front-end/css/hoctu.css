@@ -14,55 +14,21 @@ ul {
   width: 100%;
 }
 .wrapper > .header {
-  position: fixed;
-  width: inherit;
-  height: 150px;
-  color: white;
-  z-index: 1000;
   background: linear-gradient(#021b54, #014a7f);
   /* Standard syntax */
 }
-.wrapper > .header > .webname {
-  padding-left: 40px;
-  position: absolute;
-  line-height: 150px;
-  font-size: 30px;
-  font-weight: bold;
-}
-.wrapper > .header > ul {
-  position: absolute;
-  display: inline-block;
-  padding: 0;
-  margin: 0;
-  right: 0;
-  width: 50%;
-  list-style: none;
-  line-height: 150px;
-}
-.wrapper > .header > ul a {
-  text-decoration: none;
-  color: white;
-}
-.wrapper > .header > ul a > li {
+.wrapper > .header > ul > a > li {
   background: linear-gradient(#014a7f, #021b54);
-  text-align: center;
-  font-size: 20px;
-  width: 25%;
-  float: left;
-  line-height: inherit;
-}
-.wrapper > .header > ul a > li:hover {
-  background: linear-gradient(#021b54, #014a7f);
-  cursor: pointer;
 }
 .wrapper > .content {
   position: absolute;
   width: 100%;
-  height: 1500px;
+  height: 700px;
   top: 150px;
   background-color: #F4F4F4;
 }
 .wrapper > .content > .container {
+  padding: 0;
   background-color: gray;
   height: 90%;
   width: 80%;
@@ -73,45 +39,87 @@ ul {
   top: 0;
   bottom: 0;
 }
-.wrapper > .footer {
-  position: absolute;
-  width: 100%;
-  height: 100px;
-  top: 1650px;
-  background-color: #383B43;
-  color: white;
+.wrapper > .content > .container > .name_bar {
+  height: 135px;
 }
-.wrapper > .footer > .about {
-  position: absolute;
-  text-align: center;
-  height: 50px;
+.wrapper > .content > .container > .name_bar > .edit_bar {
+  float: right;
+  height: 100%;
+  width: 60%;
+}
+.wrapper > .content > .container > .name_bar > .edit_bar > ul {
+  height: 100%;
+  width: 100%;
+}
+.wrapper > .content > .container > .name_bar > .edit_bar > ul > li {
+  background: linear-gradient(#ffffff, #808080);
+  border: solid 2px;
+  float: left;
+  height: inherit;
   width: 50%;
-  margin: auto;
-  padding: 0;
+  font-size: 50px;
+  line-height: 135px;
+}
+.wrapper > .content > .container > .name_bar > .edit_bar > ul > li:last-child:hover {
+  background: linear-gradient(#00ffff, #ffffff);
+  cursor: pointer;
+}
+.wrapper > .content > .container > .name_bar > .name_desc {
+  height: 100%;
+  width: 40%;
+  background: linear-gradient(#808080, #ffffff);
+}
+.wrapper > .content > .container > .name_bar > .name_desc > .listname {
+  font-size: 50px;
+  font-weight: bold;
+  height: 60%;
+}
+.wrapper > .content > .container > .name_bar > .name_desc > .listdesc {
+  font-size: 40px;
+  height: 40%;
+  font-style: italic;
+}
+.wrapper > .content > .container > .textbox {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: white;
+  border: solid gray 1px;
+  height: 495px;
+  width: 50%;
+  background-color: #F8F8F8;
+  background: radial-gradient(#ffffff, #808080);
+}
+.wrapper > .content > .container > .textbox > .textarea {
+  position: absolute;
+  bottom: 0;
+  top: 0;
   left: 0;
   right: 0;
-  line-height: 50px;
-}
-.wrapper > .footer > .about > ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  height: inherit;
-}
-.wrapper > .footer > .about > ul > li {
-  text-decoration: underline;
-  float: left;
-  width: 16%;
-}
-.wrapper > .footer > .about > ul > li:first-child {
-  color: cyan;
-  text-decoration: none;
-}
-.wrapper > .footer > .quote {
-  position: absolute;
-  line-height: 50px;
-  height: 50px;
+  margin: auto;
+  height: 60%;
   width: 100%;
-  top: 50%;
+}
+.wrapper > .content > .container > .textbox > .textarea > input {
+  height: 100%;
+  width: 100%;
+  font-size: 45px;
+  font-weight: bold;
   text-align: center;
+}
+.wrapper > .content > .container > .image {
+  border: solid gray 1px;
+  position: absolute;
+  background-color: white;
+  right: 0;
+  bottom: 0;
+  height: 495px;
+  width: 50%;
+}
+.wrapper > .content > .container > .image > img {
+  max-height: 100%;
+  max-width: 100%;
+}
+.wrapper > .footer {
+  top: 850px;
 }

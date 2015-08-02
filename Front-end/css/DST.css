@@ -15,45 +15,11 @@ ul {
 }
 .wrapper > .header {
   position: fixed;
-  width: inherit;
-  height: 150px;
-  color: white;
-  z-index: 1000;
   background: linear-gradient(#021b54, #014a7f);
   /* Standard syntax */
 }
-.wrapper > .header > .webname {
-  padding-left: 40px;
-  position: absolute;
-  line-height: 150px;
-  font-size: 30px;
-  font-weight: bold;
-}
-.wrapper > .header > ul {
-  position: absolute;
-  display: inline-block;
-  padding: 0;
-  margin: 0;
-  right: 0;
-  width: 50%;
-  list-style: none;
-  line-height: 150px;
-}
-.wrapper > .header > ul a {
-  text-decoration: none;
-  color: white;
-}
-.wrapper > .header > ul a > li {
+.wrapper > .header > ul > a > li {
   background: linear-gradient(#014a7f, #021b54);
-  text-align: center;
-  font-size: 20px;
-  width: 25%;
-  float: left;
-  line-height: inherit;
-}
-.wrapper > .header > ul a > li:hover {
-  background: linear-gradient(#021b54, #014a7f);
-  cursor: pointer;
 }
 .wrapper > .content {
   position: absolute;

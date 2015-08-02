@@ -7,6 +7,7 @@
 	<meta name="author" content="">
 	<title>Học Từ</title>
 	<link href="css/hoctu.css" rel="stylesheet">
+	<link href="css/headerfooter.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 	<link href="css/css/bootstrap.min.css" rel="stylesheet">
 	<script type="text/javascript" src="http://st-vcdn.anthill.vn/js/library/jquery-1.10.2.min.js"></script>
@@ -15,6 +16,9 @@
 	<script type="text/javascript">
 	 	jQuery(document).ready(function($){
 	 		//Select all editable text
+	 		$('.next').click(function(){
+	 			$(this).parent().parent().parent()
+	 		})
 		});
 	</script>
 </head>
@@ -33,7 +37,34 @@
 		</div>
 		<div class="content">	
 			<div class="container">
-					
+				<div class="name_bar">
+					<div class="edit_bar">
+						<ul>
+							<li align="middle">
+								<div class="result"></div>
+							</li>
+							<li align="middle">
+								<div class="next">TIẾP THEO</div>
+							</li>							
+						</ul>
+					</div>
+					<div class="name_desc">
+						<div class="listname">
+							Danh sách 1
+						</div>
+						<div class="listdesc">
+							description
+						</div>
+					</div>
+				</div>
+				<div class="textbox">
+					<div class='textarea'>
+						<input type="text" name="word"> 
+					</div>
+				</div>
+				<div class="image">
+					<img  src="http://www.brookfarm.com.au/media/images/content/detail/apple-text443.jpg">
+				</div>
 			</div>
 		</div>
 		<div class="footer">
