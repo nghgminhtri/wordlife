@@ -1,0 +1,116 @@
+body{
+	margin:0;
+	padding:0;
+
+}
+ul{
+	margin:0;padding:0;list-style:none;
+}
+
+.wrapper{
+	font-family:Arial;
+	position:absolute;
+	height:100%;
+	width:100%;
+	>.header{
+		position:fixed;
+		background: linear-gradient(to right,#A7E1ED, #A5F1CA); /* Standard syntax */		
+	}
+	>.content{		
+		position:absolute;
+		width:100%;
+		height:730px;
+		top:80px;
+		background-color:#F4F4F4;
+		>.addbox{
+			position:absolute;
+			height: 100px;			
+			width:100px;
+			top:0; bottom:0;
+			margin: auto;
+			font-size:100px;
+			>span{
+				line-height: 100px;	
+
+				&:hover{
+					color:green;
+					cursor:pointer;
+				}
+			}
+			right:10%; 
+		}
+		>.removebox{
+			position:absolute;
+			height: 100px;
+			width:100px;
+			top:0; bottom:0;
+			margin: auto;
+			font-size:100px;
+			>span{
+				line-height: 100px;	
+				&:hover{
+					color:green;
+					cursor:pointer;
+				}
+			}
+			left:10%;
+		}
+		>.container{			
+			height:80%;
+			width:60%;
+			position:absolute;
+			margin:auto;
+			overflow-y:scroll;
+			border: 10px solid black;
+			left:0;right:0;top:0;bottom:0;	
+			>ul
+			{
+				>li{
+					margin: 25px 0;
+					&:hover{
+						background:linear-gradient(gray,white);	
+						cursor:pointer;
+					}
+					>.name_bar{							
+						height:100px;	
+						>span{
+							font-size:60px;
+							line-height:100px;
+							float:right;
+							width:100px;
+							&:hover{
+								cursor:pointer;				
+								color:green;												
+							}
+						}					
+						>.name_desc{
+							position:absolute;
+							height: 100px;
+							width: 90%;
+							background:linear-gradient(white);									
+							>.listname{
+								position:absolute;
+								height:50px;
+								top:0;
+								font-size:40px;
+								font-weight:bold;	
+								height:60%;													
+							}
+							>.listdesc{
+								position:absolute;
+								bottom:0;
+								height:50px;
+								font-size:30px;
+								height:40%;
+								font-style:italic;
+							}														
+						}
+					}
+				}				
+			}			
+		}
+	}
+	>.footer{
+		bottom:0;
+	}
+}

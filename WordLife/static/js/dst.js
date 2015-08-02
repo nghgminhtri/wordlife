@@ -31,7 +31,6 @@ jQuery(document).ready(function($){
                 var wordli = $('.words ul li[selected="selected"]');
                 wordli.remove();
 
-
             })
 
             //When click edit icon
@@ -76,7 +75,7 @@ jQuery(document).ready(function($){
                 })
             })
             $('.glyphicon.glyphicon-volume-up').click(function(){
-                alert('Làm đi Trí');
+//                alert('Làm đi Trí');
             });
         },
         ajaxWord: function(element, word_list_id, new_word, old_word) {

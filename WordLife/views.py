@@ -62,6 +62,20 @@ class WordView(View):
         return super(WordView, self).dispatch(*args, **kwargs)
 
 
+class WordListsView(View):
+    template_name = 'lists-detail.html'
+
+    def get(self, request, *args, **kwargs):
+        if request.user.is_authenticated():
+            wordlists = WordList.objects.filter(user=request.user)
+        else:
+            return redirect('/accounts/login')
+
+        return render(request, self.template_name, {
+            'wordlists': wordlists
+        })
+
+
 class WordListView(View):
     template_name = 'list-detail.html'
 

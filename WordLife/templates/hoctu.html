@@ -4,6 +4,72 @@
 <link href="{% static "css/hoctu.css" %}" rel="stylesheet">
 {% endblock %}
 
+{% block include_js %}
+<script type="text/javascript">
+jQuery(document).ready(function($){
+	Object.size = function(obj) {
+		var size = 0, key;
+		for (key in obj) {
+			if (obj.hasOwnProperty(key)) size++;
+		}
+		return size;
+	};
+
+
+	var wordlist = {};
+	var words = [];
+    {% for word in wordlist.words.all %}
+        wordlist['{{ word.word }}'] = '{{ imagepath }}{{ word.photo }}';
+        words.push('{{ word.word }}');
+    {% endfor %}
+
+    if (Object.size(wordlist) > 0 ) {
+        //Dropdown
+        var scorecount=0;
+        var clicked=0;
+        var total=Object.size(wordlist);
+        $('.next').on('click',function(){
+            var res=$(this).parent().parent().find('.result');
+            var submissionlink=$(this).parent().parent().parent().parent().parent().find('.textbox .textarea input')
+            var submission= submissionlink.val();
+            submission=submission.toLowerCase();
+            var result = $("#result").val();
+            if (submission!=''){
+            	clicked++;
+                if (submission==result){
+                    console.log(res);
+                    res.css('background','#19FF19');
+                    scorecount++;
+                }
+                else{
+                    res.css('background','red');
+                }
+                res.fadeOut(1000,function(){
+                    res.css('background','');
+                    res.fadeIn(1000);
+                    var imglink=submissionlink.parent().parent().parent().find('.image img');
+                    if (clicked<total)
+                    {
+                        submissionlink.val('');
+                        imglink.attr('src', wordlist[words[clicked]]); //link moi
+                        $("#result").val(words[clicked]);
+                    }
+                    else
+                    {
+                        alert(' Bạn đã hoàn tất ! Kết quả: ' + scorecount+' / '+total);
+                        console.log('this',$(this));
+                        $('.next').off();
+                    }
+                });
+
+            }
+        });
+    }
+});
+</script>
+<!--<script type="text/javascript" src="{% static "js/hoctu.js" %}"></script>-->
+{% endblock %}
+
 {% block content %}
 <div class="container">
 	<div class="name_bar">
@@ -14,25 +80,26 @@
 				</li>
 				<li align="middle">
 					<div class="next">TIẾP THEO</div>
-				</li>							
+				</li>
 			</ul>
 		</div>
 		<div class="name_desc">
 			<div class="listname">
-				Danh sách 1
+				{{ wordlist.listName }}
 			</div>
 			<div class="listdesc">
-				description
+				{{ wordlist.listDescription }}
 			</div>
 		</div>
 	</div>
 	<div class="textbox">
 		<div class='textarea'>
-			<input type="text" name="word"> 
+			<input type="text" name="word">
+			<input type="hidden" value="{{ wordlist.words.first.word }}" id="result">
 		</div>
 	</div>
 	<div class="image" align="middle">
-		<img  src="http://www.brookfarm.com.au/media/images/content/detail/apple-text443.jpg">
+		<img src="{{ imagepath }}{{ wordlist.words.first.photo }}">
 	</div>
 </div>
 {% endblock %}

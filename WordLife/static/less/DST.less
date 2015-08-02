@@ -14,29 +14,22 @@ ul{
 	width:100%;
 	>.header{
 		position:fixed;
-		background: linear-gradient(#021B54, #014A7F); /* Standard syntax */
-		>ul{
-			>a{
-				>li{
-					background: linear-gradient(#014A7F,#021B54);							
-				}
-			}
-		}
+		background: linear-gradient(to right,#A7E1ED, #A5F1CA); /* Standard syntax */		
 	}
 	>.content{		
 		position:absolute;
 		width:100%;
-		height:1500px;
-		top:150px;
+		height:730px;
+		top:80px;
 		background-color:#F4F4F4;
 		>.container{			
-			height:90%;
-			width:80%;
+			height:80%;
+			width:70%;
 			position:absolute;
 			margin:auto;
 			left:0;right:0;top:0;bottom:0;	
 			>.name_bar{	
-				height:10%;	
+				height:100px;	
 				>.edit_bar{
 					float:right;
 					height:100%;
@@ -50,13 +43,14 @@ ul{
 							float:left;						
 							height:inherit;
 							width:100%/4;	
-								>span{		
-								margin:auto;
-								top:10%;					
-								font-size:100px;
+							>span{		
+								margin:auto;								
+								font-size:90px;									
+								&:hover{
+									color:green;	
+								}
 							}
-							&:hover{
-								background:linear-gradient(gray,white);	
+							&:hover{								
 								cursor:pointer;
 							}
 						}
@@ -68,28 +62,28 @@ ul{
 					background:linear-gradient(gray,white);	
 						
 					>.listname{
-						font-size:50px;
+						font-size:40px;
 						font-weight:bold;	
 						height:60%;						
 					}
 					>.listdesc{
-						font-size:40px;
+						font-size:30px;
 						height:40%;
 						font-style:italic;
 					}
 				}
 			}
 			>.words{
-				height:90%;	
+				height:484px;	
 				overflow-y:scroll;
 				background-color:white;
 				>ul{
-					list-style:none;
+					list-style:none; 	
 					margin:0;
 					padding:0;
 					>li{
 						width:90%;
-						height:20%;
+						height:40%;
 						font-size:50px;
 						margin: 5%;						
 						>.card{
@@ -132,44 +126,6 @@ ul{
 		}
 	}
 	>.footer{
-		position:absolute;
-		width:100%;
-		height:100px;
-		top:1650px;
-		background-color:#383B43;
-		color:white;
-		>.about{			
-			position:absolute;
-			text-align:center;
-			height:50px;
-			width:50%;			
-			margin:auto;
-			padding:0;
-			left:0; right:0;
-			line-height:50px;		
-			>ul{				
-				list-style:none;
-				margin:0;
-				padding:0;				
-				height:inherit;					
-				>li{
-					text-decoration:underline;
-					&:first-child{
-						color:cyan;
-						text-decoration:none;
-					}
-					float:left;
-					width:16%;
-				}
-			}
-		}
-		>.quote{
-			position:absolute;
-			line-height:50px;		
-			height: 50px;
-			width:100%;
-			top:50%;
-			text-align:center;
-		}
+		bottom:0;
 	}
 }
