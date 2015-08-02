@@ -16,8 +16,43 @@
 	<script type="text/javascript">
 	 	jQuery(document).ready(function($){
 	 		//Select all editable text
-	 		$('.next').click(function(){
-	 			$(this).parent().parent().parent()
+	 		var scorecount=0;
+	 		var clicked=0;
+	 		var total=2//Tong so hinh
+	 		$('.next').on('click',function(){
+	 			clicked++;
+	 			var res=$(this).parent().parent().find('.result');
+	 			var submissionlink=$(this).parent().parent().parent().parent().parent().find('.textbox .textarea input')
+	 			var submission= submissionlink.val();	 			
+	 			submission=submission.toLowerCase();
+	 			if (submission!=''){
+		 			if (submission=='apple'){
+		 				console.log('true');
+		 				console.log(res);		 				
+		 				res.css('background','#19FF19');	 
+		 				scorecount++;				
+		 			}
+		 			else{		 			
+		 				res.css('background','red');
+		 			}
+		 			res.fadeOut(1000,function(){
+		 				res.css('background','');
+		 				res.fadeIn(1000);
+		 				var imglink=submissionlink.parent().parent().parent().find('.image img');
+		 				if (clicked<total)
+		 				{
+			 				submissionlink.val('');
+			 				imglink.attr('src','http://www.cachphacafengon.com/kcfinder/upload/images/chuoi.jpg'); //link moi
+			 			}
+			 			else 
+			 			{
+			 				alert(' Bạn đã hoàn tất ! Kết quả: ' + scorecount+' / '+total);
+			 				console.log('this',$(this));
+			 				$('.next').off();
+			 			}
+		 			});
+
+		 		}		 		
 	 		})
 		});
 	</script>
@@ -62,7 +97,7 @@
 						<input type="text" name="word"> 
 					</div>
 				</div>
-				<div class="image">
+				<div class="image" align="middle">
 					<img  src="http://www.brookfarm.com.au/media/images/content/detail/apple-text443.jpg">
 				</div>
 			</div>

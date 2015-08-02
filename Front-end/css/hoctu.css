@@ -52,13 +52,20 @@ ul {
   width: 100%;
 }
 .wrapper > .content > .container > .name_bar > .edit_bar > ul > li {
-  background: linear-gradient(#ffffff, #808080);
   border: solid 2px;
   float: left;
   height: inherit;
   width: 50%;
   font-size: 50px;
   line-height: 135px;
+}
+.wrapper > .content > .container > .name_bar > .edit_bar > ul > li > .result {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(#ffffff, #808080);
+}
+.wrapper > .content > .container > .name_bar > .edit_bar > ul > li:last-child {
+  background: linear-gradient(#ffffff, #808080);
 }
 .wrapper > .content > .container > .name_bar > .edit_bar > ul > li:last-child:hover {
   background: linear-gradient(#00ffff, #ffffff);
