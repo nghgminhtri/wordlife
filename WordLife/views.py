@@ -65,3 +65,19 @@ class WordListView(View):
             'wordlist': wordlist,
             'imagepath': imagepath
         })
+
+class LearnView(View):
+    template_name = 'hoctu.html'
+    
+    def get(self, request, list_id, *args, **kwargs):
+        if request.user.is_authenticated():
+            wordlist = get_object_or_404(WordList, id=list_id)
+            from django.contrib.sites.models import get_current_site
+            imagepath = 'http://' + get_current_site(request).domain + '/photos/'
+        else:
+            return redirect('/accounts/login')
+
+        return render(request, self.template_name, {
+            'wordlist': wordlist,
+            'imagepath': imagepath
+        })
