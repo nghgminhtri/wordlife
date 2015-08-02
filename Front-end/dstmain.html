@@ -69,7 +69,8 @@
  				var newnamedesc=document.createElement("div");	 		 			
  				var newnlistname=document.createElement("div");	 		 			
  				var newnlistdesc=document.createElement("div");
- 				var newspan=document.createElement("span");
+ 				var newspan1=document.createElement("span");
+ 				var newspan2=document.createElement("span");
  				var nametxt="Danh sách "+ (parseInt($('.container ul li').length)+1);
  				var desctext='description';
  				$('.container ul').prepend(newli);     // 
@@ -77,8 +78,10 @@
  				$('.container ul li:first-child div').addClass('name_bar');	 
  				$('.container ul li:first-child .name_bar').append(newnamedesc);	
  				$('.container ul li:first-child .name_bar div').addClass('name_desc');		
- 				$('.container ul li:first-child .name_bar').append(newspan);
- 				$('.container ul li:first-child .name_bar span').addClass('glyphicon glyphicon-pencil');		
+ 				$('.container ul li:first-child .name_bar').append(newspan2);
+ 				$('.container ul li:first-child .name_bar span:last-child').addClass('glyphicon glyphicon-folder-open');				
+ 				$('.container ul li:first-child .name_bar').append(newspan1);
+ 				$('.container ul li:first-child .name_bar span').addClass('glyphicon glyphicon-pencil'); 				
  				$('.container ul li:first-child .name_bar .name_desc').append(newnlistname);
  				$('.container ul li:first-child .name_bar .name_desc div').addClass('listname');
  				$('.container ul li:first-child .name_bar .name_desc').append(newnlistdesc);
