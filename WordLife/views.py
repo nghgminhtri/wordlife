@@ -27,6 +27,7 @@ class HomeView(View):
 class WordView(View):
     def post(self, request, *args, **kwargs):
         if request.user.is_authenticated():
+            print request.body
             request_params = json.loads(request.body)
             check_keys = ('word', 'word_list_id')
             print settings.MEDIA_ROOT
@@ -34,7 +35,7 @@ class WordView(View):
             # validate key
             if all(param in request_params for param in check_keys):
                 try:
-                    Word.objects.get(word=request_params.get('word'))
+                    new_word = Word.objects.get(word=request_params.get('word'))
                 except ObjectDoesNotExist:
                     # get word photo
                     imagepath = get_google_image(request_params.get('word'))
@@ -42,6 +43,17 @@ class WordView(View):
                     # create word if not exist
                     new_word = Word(word=request_params.get('word'), photo=imagepath)
                     new_word.save()
+
+                wordlist = WordList.objects.get(id=request_params.get('word_list_id'))
+                # remove old word if exists
+                if 'old_word' in request_params:
+                    old_word = Word.objects.get(word=request_params.get('old_word'))
+                    WordListWord.objects.get(word=old_word, wordList=wordlist).delete()
+                # save word to word list
+                wordlistword = WordListWord(word=new_word, wordList=wordlist)
+                wordlistword.save()
+
+                return JsonResponse({'image':new_word.photo.url})
 
         return JsonResponse({})
 

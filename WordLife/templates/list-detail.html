@@ -6,22 +6,29 @@
 <link href="{% static "css/dst.css" %}" rel="stylesheet">
 {% endblock %}
 
+{% block include_js %}
+<script type="text/javascript" src="{% static "js/dst.js" %}"></script>
+<script>
+    var wordListId = {{ wordlist.id }};
+</script>
+{% endblock %}
+
 {% block title %}Danh sách từ{% endblock %}
 {% block content %}
 <div class="container">
   <div class="name_bar">
         <div class="edit_bar">
             <ul>
-                <li>
+                <li align="middle">
                     <span class="glyphicon glyphicon-volume-up"></span>
                 </li>
-                <li>
+                <li align="middle">
                     <span class="glyphicon glyphicon-edit"></span>
                 </li>
-                <li>
+                <li align="middle">
                     <span class="glyphicon glyphicon-minus"></span>
                 </li>
-                <li>
+                <li align="middle">
                     <span class="glyphicon glyphicon-plus"></span>
                 </li>
             </ul>
@@ -36,8 +43,8 @@
         </div>
     </div>
     <div class="words">
-        {% if wordlist.words.all %}
-            <ul>
+        <ul>
+            {% if wordlist.words.all %}
                 {% for word in wordlist.words.all %}
                     <li>
                         <div class="card">
@@ -48,8 +55,8 @@
                         </div>
                     </li>
                 {% endfor %}
-            </ul>
-        {% endif %}
+            {% endif %}
+        </ul>
     </div>
 </div>
 {% endblock %}
